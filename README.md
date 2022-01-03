@@ -102,20 +102,20 @@ $ cp .env.example .env
 ```
 6. Install composer dependencies
 ```
-$ composer install --prefer-dist
+$ docker exec laravel-boilerplate_laravel-env_1 composer install --prefer-dist
 ```
 7. An application key can be generated with the command
 ```
-$ php artisan key:generate
+$ docker exec laravel-boilerplate_laravel-env_1 php artisan key:generate
 ```
 8. Execute following commands to install other dependencies
 ```
-$ npm install
-$ npm run dev
+$ docker exec laravel-boilerplate_laravel-env_1 npm install
+$ docker exec laravel-boilerplate_laravel-env_1 npm run dev
 ```
 9. Run these commands to create the tables within the defined database and populate seed data
 ```
-$ php artisan migrate --seed
+$ docker exec laravel-boilerplate_laravel-env_1 php artisan migrate --seed
 ```
 
 ## Troubleshooting
@@ -174,7 +174,7 @@ $ docker-compose -f docker-compose.yml -f docker-compose.utils.yml up -d  # to s
 
 4. Build project
 ```
-$ docker exec laravel-boilerplate_laravel-env_1 ./dockerfiles/bin/prj-build.sh
+$ docker exec laravel-boilerplate_laravel-env_1 sh ./dockerfiles/bin/prj-build.sh
  or
 $ docker-compose run --rm laravel-boilerplate_laravel-env_1 ./dockerfiles/bin/prj-build.sh
 ```
